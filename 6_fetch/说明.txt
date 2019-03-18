@@ -1,0 +1,3 @@
+﻿开课吧第六期，第六节课程练习
+1.fetch_json.html文件需要放在apache环境下测试
+2.server克隆下需要重新install
