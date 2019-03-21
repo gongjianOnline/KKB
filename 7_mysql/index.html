@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./jquery.js"></script>
+</head>
+<body>
+		用户名：<input type="text" name="user" id="user">
+		密码：<input type="password" name="password" id="password">
+		<button id="submit">提交</button>
+		<button id="register">注册</button>
+</body>
+</html>
+<script>
+	$("#submit").on("click",function(){
+		$.ajax({
+			url:"http://localhost:8081/register",
+			method:"get",
+			data:{	
+				user_name:$("#user")[0].value,
+				password:$("#password")[0].value
+			},
+		}).then((res)=>{
+			console.log(JSON.parse(res))
+		},(err)=>{
+			console.log(err)
+		})
+	})
+
+
+
+</script>
