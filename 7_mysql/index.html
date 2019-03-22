@@ -22,7 +22,10 @@
 				password:$("#password")[0].value
 			},
 		}).then((res)=>{
-			console.log(JSON.parse(res))
+			var data = JSON.parse(res);
+			if(data.code == 102){
+				alter("账号和密码不能为空")
+			}
 		},(err)=>{
 			console.log(err)
 		})

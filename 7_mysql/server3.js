@@ -1,28 +1,26 @@
 /*
-	使用http请求node接口操作数据库;
-	createPool 建立连接池
-*/ 
+	1.参考server2.js的简化版
+	2.引入了co-mysql异步封装的插件
+*/
+
 const http = require("http")
 const mysql = require("mysql")
+const co = require("co-mysql'")
 const url = require("url")
 const querystring = require("querystring")
 
-// let db = mysql.createConnection({
-// 	host:"localhost",
-// 	user:"root",
-// 	password:"",
-// 	database:'2019-3-21'
-// })
 //连接池
-let db = mysql.createConnection({
+let conn = mysql.createPool({
 	// connectionLimit:10 //最大连接数，默认为10
 	host:"localhost",	
 	user:"root",
 	password:"",
 	database:'2019-3-21'
 })
+let db = co(conn)
+
 //2.http请求
-http.createServer((req,res)=>{
+http.createServer(async (req,res)=>{
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	let {pathname,query} = url.parse(req.url,true);
 	if(query.user_name == '' || query.password == '' || query.length == 0){
