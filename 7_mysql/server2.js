@@ -25,7 +25,7 @@ let db = mysql.createConnection({
 http.createServer((req,res)=>{
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	let {pathname,query} = url.parse(req.url,true);
-	if(query.user_name == '' || query.password == '' || query.length == 0){
+	if(query.user_name == '' || query.password == ''){
 		res.write(JSON.stringify({code:102}))
 		res.end()
 	}else if(pathname == "/register"){
@@ -34,7 +34,7 @@ http.createServer((req,res)=>{
 				res.write(JSON.stringify({code:500}))
 				res.end()
 			}else if(data.length>0){
-					res.write(JSON.stringify({code:103}))
+					res.write(JSON.stringify({code: }))
 					res.end()
 			}else{
 				db.query(`INSERT INTO user_table (user_name,password) VALUES ('${query.user_name}','${query.password}')`,(err,data)=>{
