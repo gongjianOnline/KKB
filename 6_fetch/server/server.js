@@ -15,4 +15,5 @@ http.createServer((req,res)=>{
 	form.on('close',()=>{
 		console.log("结束");
 	});
+	res.end();
 }).listen(8085)
