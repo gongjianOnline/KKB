@@ -1,9 +1,14 @@
-const process = require("process");
-let mode = (process.env.OS == "Windows_NT" ?"dev":"prod");
-let dev = require("./config.dev");
-let prod = require("./config.prod");
+/**
+ * name:"",
+ * date:"2019-4-13",
+ * Explain:"整合node项目-建立开发/生产环境"
+ * 
+ */
 
-module.exports = {
-	mode,
-	...(mode=="dev"?dev:prod)
-}
+ const process= require("process");
+ let mode = (process.env.os == "Windows_NT"?"dev":"prod");
+ console.log(mode)
+ module.exports = {
+    mode,
+    ...(mode == "dev"?require("./config.dev"):require("./config.prod"))
+ }

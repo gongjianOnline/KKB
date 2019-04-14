@@ -1,3 +1,8 @@
+/**
+ * name:'',
+ * date:"2019-4-13",
+ * Explain:"node收尾，http中的读写流操作"
+ */
 const http = require("http")
 const zlib = require("zlib")
 const url = require("url")

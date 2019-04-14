@@ -1,6 +1,8 @@
-/*
-	文件读写流练习
-*/
+/**
+ * name:"",
+ * date:"2019-4-13",
+ * Explain:"node收尾，读取写入基本操作",
+ */
 
 const fs = require("fs")
 
