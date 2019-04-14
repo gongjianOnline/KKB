@@ -1,7 +1,7 @@
 module.exports = {
-    DB_HOST:"21.34.98.75",
-    DB_PORT:"3309",
+    DB_HOST:"localhost",
+    DB_PORT:"3306",
     DB_USER:"root",
-    DB_PASS:"test",
-    DN_NAME:"testSql"
+    DB_PASS:"",
+    DN_NAME:"kkbnode"
 }

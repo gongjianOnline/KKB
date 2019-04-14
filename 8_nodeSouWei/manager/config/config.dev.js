@@ -3,5 +3,5 @@ module.exports = {
     DB_PORT:"3306",
     DB_USER:"root",
     DB_PASS:"",
-    DN_NAME:""
+    DN_NAME:"kkbnode"
 }

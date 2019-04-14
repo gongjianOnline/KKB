@@ -7,7 +7,6 @@
 
  const process= require("process");
  let mode = (process.env.os == "Windows_NT"?"dev":"prod");
- console.log(mode)
  module.exports = {
     mode,
     ...(mode == "dev"?require("./config.dev"):require("./config.prod"))
