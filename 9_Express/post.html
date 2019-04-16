@@ -1,0 +1,29 @@
+<!--
+	提示：需要放在apache环境下运行;
+	date:2019-4-16;
+	Explain:配合server2的接口使用,测试普通post数据的传收操作
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">post测试</button>
+</body>
+</html>
+<script src="jquery.js"></script>
+<script>
+	$('#btn').on('click',function(){
+		console.log("asdsd")
+		$.ajax({
+			type:'post',
+			url:'http://localhost:8888/a',
+			data:{value:2,label:"测试"},
+			success:function(res){
+				console.log(res)
+			}
+		})
+	})
+</script>
