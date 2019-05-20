@@ -13,4 +13,7 @@ let obj = multer({dest:'./static/upload'});
 server.use(obj.any());
 server.post("/reg",(reg,res)=>{
     console.log(reg,res)
+    console.log(reg.files)
+    reg.files[0].fieldname =  reg.files[0].originalname;
+    res.send({code:101})
 })
