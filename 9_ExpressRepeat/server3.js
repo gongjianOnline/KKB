@@ -8,8 +8,7 @@ server.listen(8888);
         extended:false
     }));
 server.post("/a",(req,res,next)=>{
-    res.header("Access-Control-Allow-Credentials","true");
+    res.header("Access-Control-Allow-Credentials","true")
     console.log("测试post接口")
-  
     console.log(req.body)
 })
